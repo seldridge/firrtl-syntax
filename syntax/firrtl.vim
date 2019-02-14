@@ -89,7 +89,7 @@ syntax region firrtlLiteral matchgroup=Identifier start=+[US]Int<[0-9]*>(+ start
 "===== Types ====
 syntax keyword firrtlFlip flip contained
 syntax match firrtlGroundType "\v[US]Int(\<[0-9]+\>)?(\[[0-9]+\])*" containedin=firrtlBundleType,firrtlDec,firrtlReg
-syntax match firrtlGroundType "\v(Clock|Analog)(\[[0-9]+\])*" containedin=firrtlBundleType,firrtlDec,firrtlReg
+syntax match firrtlGroundType "\v(Clock|Analog|AsyncReset)(\[[0-9]+\])*" containedin=firrtlBundleType,firrtlDec,firrtlReg
 syntax match firrtlVectorType "\v(\[[0-9]+\])+" contained containedin=firrtlDec,firrtlReg
 syntax region firrtlBundleType matchgroup=Type start=/\v\{/ end=/\v\}/ contains=firrtlBundleType,firrtlFlip,firrtlGroundType,firrtlVectorType containedin=firrtlDec,firrtlReg
 
